@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Food</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js'%>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <%= link_to "Order Food", "/category", class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <% @categories.each do |category| %>
+            <li class="nav-item">
+              <%= link_to category.name, category_path(category.id), class: "nav-link" %>
+          </li>
+          <% end %>
+          
+        </ul>
+        <%= form_tag("/order", method: "get", class: "form-inline my-2 my-lg-0" ) do %>
+          <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
+          <div class="cart">
+            <button type="submit" class="btn btn-default btn-sm btn-add-to-cart">
+              <% if session[:cart].present?%>
+                <span id="cart-size"><%= session[:cart].length%></span> x
+              <% end %>
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+                Cart
+            </button>
+          </div>
+        <%end%>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <%= yield %>
+    </main>
+  
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

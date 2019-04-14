@@ -1,0 +1,7 @@
+13623:C 12 Apr 10:31:12.588 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+13623:C 12 Apr 10:31:12.588 # Redis version=4.0.9, bits=64, commit=00000000, modified=0, pid=13623, just started
+13623:C 12 Apr 10:31:12.588 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13623:M 12 Apr 10:31:12.588 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+13623:M 12 Apr 10:31:12.588 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+13623:M 12 Apr 10:31:12.588 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+13623:M 12 Apr 10:31:12.588 # Creating Server TCP listening socket *:6379: bind: Address already in use

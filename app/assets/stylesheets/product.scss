@@ -1,0 +1,58 @@
+// Place all the styles related to the product controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$label-width-lg: 300px;
+
+#category__product {
+  .product {
+    &__image {
+      width: 360px;
+      height: 255px;
+    }
+
+    &__quantity {
+      text-align: center;
+      width: 50px;
+    }
+
+    &__btn-adjust {
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    &__add-to-cart {
+      justify-content: flex-start !important;
+    }
+  }
+
+  .group-add-to-cart {
+    padding: 16px;
+
+    .btn-add-to-cart {
+      background-color: #E6E6E6E6;
+      font-size: inherit;
+    }
+  }
+
+  .inline-label-value {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 4px 0;
+
+    &__value {
+      padding: 4px 0;
+      margin: auto;
+    }
+
+    &__label {
+      font-weight: bold;
+      color: black;
+      padding: 4px 0;
+      max-width: $label-width-lg;
+      min-width: $label-width-lg;
+      width: $label-width-lg;
+    }
+  }
+}

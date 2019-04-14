@@ -1,0 +1,36 @@
+
+<div id="category__product">
+  <h2>PRODUCT</h2>
+
+  <div>
+    <img src="<%= @product.image%>" class="rounded product__image" alt="food">
+  </div>
+
+  <%= render partial: "label_value", locals: { product_label: "Name", product_value: @product.name } %>
+  <%= render partial: "label_value", locals: { product_label: "Description", product_value: @product.description } %>
+  <%= render partial: "label_value", locals: { product_label: "Price", product_value: @product.price } %>
+
+  <div class="d-flex justify-content-between align-items-center product__add-to-cart">
+    <div class="btn-group">
+      <span class= "btn btn-sm btn-outline-secondary product__btn-increase" >
+        <strong class="product__btn-adjust">+</strong>
+      </span>
+      <input type="text" name="quantity" class="product__quantity" value="1" />
+      <span class= "btn btn-sm btn-outline-secondary product__btn-decrease" >
+        <strong class="product__btn-adjust">-</strong>
+      </span>
+    </div>
+    <div class="group-add-to-cart">
+      <button type="submit" class="btn btn-default btn-sm btn-add-to-cart">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        Add To Cart
+      </button>
+    </div>
+  </div>
+
+   <%#-----HIDDEN VALUE----- %>
+   <input class="hidden" value="<%= @product.id%>" id="product_id" />
+   <input class="hidden" value="<%= @product.price%>" id="product_price" />
+   <input class="hidden" value="<%= @product.name%>" id="product_name" />
+
+</div>
